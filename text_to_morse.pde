@@ -6,14 +6,12 @@ class Morse {
   String morseC;//"ch" in morse
   String[] morse;//morse conversion chart
   int morseL;
-  int t;
   char cur;
   int del;
   Morse() {
     input=loadStrings("input.txt");
     morse=loadStrings("morse.txt");
     il=input[0].length();
-    t=0;
     morseO="";//removes "null" character at beginning of string
     del=120;
   }
@@ -21,13 +19,11 @@ class Morse {
     for (int i=0; i<il; i++) {  
       ch=int(input[0].charAt(i));
       morseC=morse[ch];
-      //port.write(morseC + "\n");
-      //port.write(" " + "\n");
-      //println(morseC);
-      //println(" ");
       morseO=morseO + morseC + " ";
     }
-    morseO=morseO + "...-.-";
+    if (addmsg==true) {
+      morseO=morseO + "/ ...-.-";
+    }
     morseL=morseO.length();
     println(morseO);
     state=2;
