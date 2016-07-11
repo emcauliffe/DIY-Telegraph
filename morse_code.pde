@@ -24,7 +24,7 @@ void draw() {
     text("click to start", 50, 50);
     stroke(2);
     textSize(8.5);
-    text("append messsage\nwith <VA>", 58, 84);
+    text("append messsage\nwith <AR>", 58, 84);
     textSize(12);
     if (addmsg==false) {
       fill(255);
@@ -62,10 +62,16 @@ void draw() {
     background(255);
     fill(0);
     textAlign(CENTER);
-    text("done\n(click to repeat\nesc to quit)", 50, 40);
-    if (mousePressed==true|keyPressed==true) {
+    text("done\n(click to repeat\nq to quit)", 50, 40);
+    if (mousePressed==true) {
       t=0;
       state=2;
+    }
+    if (keyPressed==true){
+      if (key=='q'){
+        m.end();
+        exit();
+      }
     }
   }
 }

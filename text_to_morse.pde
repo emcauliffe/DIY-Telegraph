@@ -22,7 +22,7 @@ class Morse {
       morseO=morseO + morseC + " ";
     }
     if (addmsg==true) {
-      morseO=morseO + "/ ...-.-";
+      morseO=morseO + " / .-.-.";
     }
     morseL=morseO.length();
     println(morseO);
@@ -56,6 +56,33 @@ class Morse {
     if (t >= morseL) {
       state=3;
     }
+  }
+  void end() {
+    arduino.digitalWrite(pin, Arduino.LOW);
+    delay(del);
+    arduino.digitalWrite(pin, Arduino.HIGH);
+    delay(del);//dit
+    arduino.digitalWrite(pin, Arduino.LOW);
+    delay(del);
+    arduino.digitalWrite(pin, Arduino.HIGH);
+    delay(del);//dit
+    arduino.digitalWrite(pin, Arduino.LOW);
+    delay(del);
+    arduino.digitalWrite(pin, Arduino.HIGH);
+    delay(del);//dit
+    arduino.digitalWrite(pin, Arduino.LOW);
+    delay(del);
+    arduino.digitalWrite(pin, Arduino.HIGH);
+    delay(del*3);//dah
+    arduino.digitalWrite(pin, Arduino.LOW);
+    delay(del);
+    arduino.digitalWrite(pin, Arduino.HIGH);
+    delay(del);//dit
+    arduino.digitalWrite(pin, Arduino.LOW);
+    delay(del);
+    arduino.digitalWrite(pin, Arduino.HIGH);
+    delay(del*3);//dah
+    arduino.digitalWrite(pin, Arduino.LOW);
   }
   String morse() {
     return morseO;
