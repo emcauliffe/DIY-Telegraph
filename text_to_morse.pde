@@ -13,7 +13,7 @@ class Morse {
     morse=loadStrings("morse.txt");
     il=input[0].length();
     morseO="";//removes "null" character at beginning of string
-    del=120;
+    del=60;
   }
   void tomorse() {
     for (int i=0; i<il; i++) {  

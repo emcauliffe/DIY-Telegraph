@@ -7,7 +7,7 @@ Morse m;
 int state=0;
 int pin=8;
 int t;
-boolean addmsg=false;
+boolean addmsg=true;
 void setup() {
   m=new Morse();
   size(100, 100);
